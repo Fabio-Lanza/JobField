@@ -88,7 +88,7 @@ function Register() {
         className="btn btn-block btn-hipster" 
         disabled={isLoading}
         onClick={()=> dispatch(loginUser({email: 'testUser@test.com', password: 'secret'}))}>
-          {isLoading ? "Loading..." : "Demo App"}
+          {isLoading ? "Loading..." : "Demo"}
         </button>
 
         {values.isMember ? (
