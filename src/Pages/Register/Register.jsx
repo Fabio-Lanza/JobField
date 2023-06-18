@@ -83,6 +83,14 @@ function Register() {
           {isLoading ? "Loading..." : "Submit"}
         </button>
 
+        <button 
+        type="submit" 
+        className="btn btn-block btn-hipster" 
+        disabled={isLoading}
+        onClick={()=> dispatch(loginUser({email: 'testUser@test.com', password: 'secret'}))}>
+          {isLoading ? "Loading..." : "Demo App"}
+        </button>
+
         {values.isMember ? (
           <p>
             Not a member yet?
@@ -96,6 +104,7 @@ function Register() {
             <button type="button" onClick={toggleMember} className="member-btn">
               Login
             </button>
+          
           </p>
         )}
       </form>

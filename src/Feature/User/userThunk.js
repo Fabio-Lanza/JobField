@@ -29,7 +29,6 @@ export const registerUserThunk = async (url, user, thunkAPI) => {
       });
       return resp.data;
     } catch (error) {
-      // console.log(error.response);
       if (error.response.status === 401) {
         thunkAPI.dispatch(logoutUser());
         return thunkAPI.rejectWithValue('Unauthorized! Logging Out...');

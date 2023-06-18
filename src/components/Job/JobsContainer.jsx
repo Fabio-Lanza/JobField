@@ -1,15 +1,31 @@
 import { useEffect } from "react";
-import Job from "../Jobs/Jobs";
+import Job from "./Job";
 import Wrapper from "../../Styled-components/JobsContainer-style";
 import { useSelector, useDispatch } from "react-redux";
 import Loading from "../Loading/Loading";
+import { getAllJobs } from "../../Feature/AllJobs/allJobsSlice";
+import PageBtnContainer from "../Pagination/PageBtnContainer";
 
 function JobsContainer() {
-  const { jobs, isLoading } = useSelector((store) => store.allJobs);
+  const {
+    jobs,
+    isLoading,
+    page,
+    totalJobs,
+    numOfPages,
+    search,
+    searchStatus,
+    searchType,
+    sort,
+  } = useSelector((store) => store.allJobs);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getAllJobs());
+  }, [page, search, searchStatus, searchType, sort]);
+
   if (isLoading) {
-    return <Loading center/>;
+    return <Loading center />;
   }
 
   if (jobs.length === 0) {
@@ -22,13 +38,15 @@ function JobsContainer() {
 
   return (
     <Wrapper>
-      <h5>Jobs Info</h5>
+      <h5>
+        {totalJobs} job{jobs.length > 1 && "s"} found
+      </h5>
       <div className="jobs">
         {jobs.map((job) => {
-          console.log(job);
           return <Job key={job._id} {...job} />;
         })}
       </div>
+      {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );
 }

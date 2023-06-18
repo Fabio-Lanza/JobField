@@ -1,4 +1,4 @@
-import JobsContainer from "../../components/JobsContainer/JobsContainer"
+import JobsContainer from "../../components/Job/JobsContainer"
 import SearchContainer from "../../components/SearchContainer/SearchContainer"
 
 
