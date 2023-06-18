@@ -143,8 +143,8 @@ ul {
   display: block;
   object-fit: cover;
 }
-/* buttons */
 
+/* buttons */
 .btn {
   cursor: pointer;
   color: var(--white);
@@ -185,6 +185,7 @@ ul {
   background: var(--red-dark);
   color: var(--white);
 }
+
 /* alerts */
 .alert {
   padding: 0.375rem 0.75rem;
@@ -204,8 +205,8 @@ ul {
   color: var(--green-dark);
   background: var(--green-light);
 }
-/* form */
 
+/* form */
 .form {
   width: 90vw;
   max-width: var(--fixed-width);
@@ -234,6 +235,7 @@ ul {
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
   border: 1px solid var(--grey-200);
+  outline: none;
 }
 .form-input,
 .form-select,
