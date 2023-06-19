@@ -12,6 +12,7 @@ import {
   updateUserThunk,
 } from "./userThunk";
 
+
 const initialState = {
   isLoading: false,
   isSidebarOpen: false,
