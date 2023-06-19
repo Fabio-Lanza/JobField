@@ -1,4 +1,4 @@
-import customFetch from '../../utils/axios';
+import customFetch from '../../Utils/axios';
 import { logoutUser } from './userSlice';
 
 
