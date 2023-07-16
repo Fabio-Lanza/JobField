@@ -48,6 +48,16 @@ const Wrapper = styled.main`
       display: block;
     }
   }
+
+  @media (max-width: 500px) {
+    .info {
+      width: 400px;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+  }
 `;
 
 export default Wrapper;
